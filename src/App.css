@@ -1,0 +1,30 @@
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/iranyekan/IRANYekanWebRegular.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./assets/fonts/iranyekan/IRANYekanWebRegular.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+}
+select,
+input,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  font-family: iranyekan !important;
+}
+.leaflet-container {
+  width: 100%;
+  height: calc(100vh - 126px);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 640px) {
+  .leaflet-container {
+    height: calc(100vh - 216px);
+  }
+}
