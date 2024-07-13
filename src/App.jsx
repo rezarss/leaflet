@@ -9,7 +9,6 @@ import 'leaflet/dist/leaflet.css';
 import { services } from "./data/services";
 import PopupContent from "./components/layouts/popupContent";
 
-
 function App() {
   function findById(array, id) {
     return array?.find(item => item.id === id);
@@ -21,6 +20,8 @@ function App() {
     const city = findById(county.cities, cityId);
     return city;
   }
+
+  const [mapType, setMapType] = useState('openstreetmap')
 
   const [initZoom, setInitZoom] = useState(13);
   const [selectedField, setSelectedField] = useState({
@@ -62,12 +63,22 @@ function App() {
       <div className="bg-slate-100 my-4 p-2 sm:p-4 rounded-md border-2">
         <ServicesField selectedField={selectedField} setSelectedField={setSelectedField} />
       </div>
-      <div className="rounded-md border-2 z-0">
+      <div className="relative rounded-md border-2 z-0">
+        <button onClick={() => setMapType(mapType === 'openstreetmap' ? 'mapbox' : 'openstreetmap')} className="absolute top-4 right-4 bg-white p-2 rounded shadow z-10 cursor-pointer focus:outline-none">
+          {mapType === 'openstreetmap' ? 'نقشه هوایی' : 'نقشه توپوگرافی'}
+        </button>
         <MapContainer center={[selectedField?.city.coordinates.latitude, selectedField?.city.coordinates.longitude]} zoom={initZoom} scrollWheelZoom={true} className="z-0">
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
+          {mapType === 'openstreetmap' ?
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            :
+            <TileLayer
+              url={"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=" + import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
+              attribution='&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a>'
+            />
+          }
           <MapFlyTo selectedCity={selectedField.city} />
           {geoJsonServiceHandler && <GeoJSON key={selectedField.serviceId} data={geoJsonServiceHandler.data}
             pointToLayer={(feature, latlng) => {
