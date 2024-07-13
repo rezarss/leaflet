@@ -4,16 +4,6 @@ const geoJson = [
     data: {
       type: "FeatureCollection",
       features: [
-        { type: "Feature", id: "eiffel", geometry: { type: "Point", coordinates: [2.295967680887427, 48.85780097266282, 0] }, properties: { name: "The Eiffel Tower", description: "Located in Paris, France" } },
-        { type: "Feature", id: "christ", geometry: { type: "Point", coordinates: [-43.20953574843956, -22.95040715767599, 0] }, properties: { name: "Christ the Redeemer", description: "Located in Rio, Brazil" } },
-        { type: "Feature", id: "canyon", geometry: { type: "Point", coordinates: [-111.839335188889, 36.14936973429993, 0] }, properties: { name: "The Grand Canyon", description: "Located in Arizona, USA" } },
-        { type: "Feature", id: "sydney", geometry: { type: "Point", coordinates: [151.2122001847845, -33.85543600090152, 0] }, properties: { name: "Sydney", description: "New South Wales, Australia" } },
-        { type: "Feature", id: "peters", geometry: { type: "Point", coordinates: [12.45863229278517, 41.90238356414683, 0] }, properties: { name: "St Peters Basilica", description: "Located in Vatican City" } },
-        { type: "Feature", id: "london", geometry: { type: "Point", coordinates: [-0.1208037863755851, 51.50295856070689, 0] }, properties: { name: "The London Eye", description: "Located in London, England" } },
-        { type: "Feature", id: "titanic", geometry: { type: "Point", coordinates: [-49.94881009327763, 41.72834170105288, 0] }, properties: { name: "The Titanic", description: "Located in the North Atlantic Ocean" } },
-        { type: "Feature", id: "forbidden", geometry: { type: "Point", coordinates: [116.3908088768236, 39.91379916102216, 0] }, properties: { name: "The Forbidden City", description: "Located in China" } },
-        { type: "Feature", id: "fuji", geometry: { type: "Point", coordinates: [138.7818265722904, 35.34063009043844, 0] }, properties: { name: "Mount Fuji", description: "Located near Tokyo, Japan" } },
-        { type: "Feature", id: "google", geometry: { type: "Point", coordinates: [-122.0857031353512, 37.42169546752972, 0] }, properties: { name: "Google Headquarters", description: "Located in Mountain View, California" } },
         {
           type: "Feature",
           geometry: {
@@ -27,7 +17,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -124,7 +114,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -139,7 +129,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -154,7 +144,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         { type: "Feature", geometry: { type: "Point", coordinates: [56.24306207350311, 27.16513293086568, 0] }, properties: { name: "Soro" } },
         { type: "Feature", geometry: { type: "Point", coordinates: [56.24192917811154, 27.17302406150775, 0] }, properties: { name: "AmirAbad" } },
@@ -201,7 +191,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -216,7 +206,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -231,7 +221,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -246,7 +236,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -261,7 +251,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -276,7 +266,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -291,7 +281,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -306,7 +296,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -321,7 +311,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -336,7 +326,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -351,7 +341,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -366,7 +356,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -381,7 +371,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -642,7 +632,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -657,7 +647,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -672,7 +662,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -687,7 +677,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -702,7 +692,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -717,7 +707,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -732,7 +722,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -747,7 +737,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         { type: "Feature", geometry: { type: "Point", coordinates: [56.24306207350311, 27.16513293086568, 0] }, properties: { name: "Soro" } },
         { type: "Feature", geometry: { type: "Point", coordinates: [56.24192917811154, 27.17302406150775, 0] }, properties: { name: "AmirAbad" } },
@@ -796,7 +786,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         {
           type: "Feature",
@@ -811,7 +801,7 @@ const geoJson = [
               ],
             ],
           },
-          properties: { name: "اندازه گیری چند ضلعی", tessellate: true },
+          properties: { name: "محدوده پوشش دهی", tessellate: true },
         },
         { type: "Feature", geometry: { type: "Point", coordinates: [56.24306207350311, 27.16513293086568, 0] }, properties: { name: "Soro" } },
         { type: "Feature", geometry: { type: "Point", coordinates: [56.24192917811154, 27.17302406150775, 0] }, properties: { name: "AmirAbad" } },

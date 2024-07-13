@@ -64,8 +64,8 @@ function App() {
         <ServicesField selectedField={selectedField} setSelectedField={setSelectedField} />
       </div>
       <div className="relative rounded-md border-2 z-0">
-        <button onClick={() => setMapType(mapType === 'openstreetmap' ? 'mapbox' : 'openstreetmap')} className="absolute top-4 right-4 bg-white p-2 rounded shadow z-10 cursor-pointer focus:outline-none">
-          {mapType === 'openstreetmap' ? 'نقشه هوایی' : 'نقشه توپوگرافی'}
+        <button onClick={() => setMapType(mapType === 'openstreetmap' ? 'mapbox' : 'openstreetmap')} className="absolute top-4 right-4 bg-white text-sm p-2 rounded shadow z-10 cursor-pointer focus:outline-none">
+          {mapType === 'openstreetmap' ? 'نقشه ماهواره ای' : 'نقشه پیش فرض'}
         </button>
         <MapContainer center={[selectedField?.city.coordinates.latitude, selectedField?.city.coordinates.longitude]} zoom={initZoom} scrollWheelZoom={true} className="z-0">
           {mapType === 'openstreetmap' ?
