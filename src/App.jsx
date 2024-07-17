@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap, GeoJSON, Polygon } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap, GeoJSON, Polygon, useMapEvents, LayersControl } from 'react-leaflet';
 import './App.css';
 import ServicesField from "./components/fields/services";
 import { provinces } from './data/provinces';
@@ -31,6 +31,20 @@ function App() {
     cityId: 1,
     city: findCity(1, 1, 1)
   });
+
+  const [clickedPosition, setClickedPosition] = useState(null);
+  const MapClickHandler = () => {
+    const map = useMapEvents({
+      click: (e) => {
+        const { lat, lng } = e.latlng;
+        setClickedPosition({ lat, lng });
+      },
+    });
+    return null;
+  };
+  useEffect(() => {
+    setClickedPosition(null)
+  }, [selectedField, mapType])
 
   const serviceAreasByCity = findCity(selectedField.provinceId, selectedField.countyId, selectedField.cityId)
     .services.find(service => service.serviceId === selectedField.serviceId)?.areas;
@@ -75,7 +89,7 @@ function App() {
             />
             :
             <TileLayer
-              url={"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=" + import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
+              url={`https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/{z}/{x}/{y}?access_token=${import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}&maxzoom=22`}
               attribution='&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a>'
             />
           }
@@ -116,6 +130,16 @@ function App() {
             );
           })*/}
 
+          <MapClickHandler />
+          {clickedPosition && (
+            <Popup position={[clickedPosition.lat, clickedPosition.lng]}>
+              <div>
+                <h3 className="text-right font-bold">مختصات:</h3>
+                <p className="text-right !my-0">عرض جغرافیایی: {clickedPosition.lat.toFixed(6)}</p>
+                <p className="text-right !my-0"><span className="!font-bold">طول جغرافیایی:</span> {clickedPosition.lng.toFixed(6)}</p>
+              </div>
+            </Popup>
+          )}
         </MapContainer>
       </div>
     </>
