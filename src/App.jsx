@@ -9,6 +9,33 @@ import 'leaflet/dist/leaflet.css';
 import { services } from "./data/services";
 import PopupContent from "./components/layouts/popupContent";
 
+function customStringify(obj, indent = '') {
+  if (typeof obj !== 'object' || obj === null) {
+    // برای مقادیر غیر آبجکت، از JSON.stringify استاندارد استفاده می‌کنیم
+    return JSON.stringify(obj);
+  }
+
+  let result = '{\n';
+  for (const [key, value] of Object.entries(obj)) {
+    result += `${indent}  ${key}: `;
+    if (typeof value === 'object' && value !== null) {
+      if (Array.isArray(value)) {
+        result += '[\n';
+        result += value.map(item => `${indent}    ${customStringify(item, indent + '    ')}`).join(',\n');
+        result += `\n${indent}  ]`;
+      } else {
+        result += customStringify(value, indent + '  ');
+      }
+    } else {
+      result += customStringify(value);
+    }
+    result += ',\n';
+  }
+  // حذف آخرین کاما و اضافه کردن براکت بسته
+  result = result.slice(0, -2) + '\n' + indent + '}';
+  return result;
+}
+
 function App() {
   function findById(array, id) {
     return array?.find(item => item.id === id);
@@ -137,6 +164,17 @@ function App() {
                 <h3 className="text-right font-bold">مختصات:</h3>
                 <p className="text-right !my-0">عرض جغرافیایی: {clickedPosition.lat.toFixed(6)}</p>
                 <p className="text-right !my-0"><span className="!font-bold">طول جغرافیایی:</span> {clickedPosition.lng.toFixed(6)}</p>
+                <p dir="ltr">{customStringify({
+                  id: 999999,
+                  name: "xxxxxxxx",
+                  value: "yyyyyyyyyy",
+                  services: [{ serviceId: 1 }],
+                  coordinates: {
+                    latitude: clickedPosition.lat.toFixed(6),
+                    longitude: clickedPosition.lng.toFixed(6),
+                  },
+                  zoomLevel: 17,
+                })}</p>
               </div>
             </Popup>
           )}
