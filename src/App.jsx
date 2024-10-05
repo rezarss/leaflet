@@ -164,7 +164,7 @@ function App() {
                 <h3 className="text-right font-bold">مختصات:</h3>
                 <p className="text-right !my-0">عرض جغرافیایی: {clickedPosition.lat.toFixed(6)}</p>
                 <p className="text-right !my-0"><span className="!font-bold">طول جغرافیایی:</span> {clickedPosition.lng.toFixed(6)}</p>
-                <p dir="ltr">{customStringify({
+                {/* <p dir="ltr">{customStringify({
                   id: 999999,
                   name: "xxxxxxxx",
                   value: "yyyyyyyyyy",
@@ -178,7 +178,7 @@ function App() {
                 <br></br>
                 <br></br>
                 <br></br>
-                <a href={`https://www.google.com/maps/place/${clickedPosition.lat.toFixed(6)},${clickedPosition.lng.toFixed(6)}`} target="_blank">{clickedPosition.lat.toFixed(6)}, {clickedPosition.lng.toFixed(6)}</a>
+                <a href={`https://www.google.com/maps/place/${clickedPosition.lat.toFixed(6)},${clickedPosition.lng.toFixed(6)}`} target="_blank">{clickedPosition.lat.toFixed(6)}, {clickedPosition.lng.toFixed(6)}</a> */}
               </div>
             </Popup>
           )}
