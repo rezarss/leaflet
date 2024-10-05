@@ -26,8 +26,6 @@ const provinces = [
                   },
                 ],
               },
-              { serviceId: 2 },
-              { serviceId: 3 },
             ],
             coordinates: {
               latitude: 27.188772,
@@ -83,7 +81,7 @@ const provinces = [
             id: 1,
             name: "بندر لنگه",
             value: "bandarLengeh",
-            services: [{ serviceId: 1 }, { serviceId: 2 }],
+            services: [{ serviceId: 1 } ],
             coordinates: {
               latitude: 26.567041,
               longitude: 54.893308,
@@ -220,8 +218,7 @@ const provinces = [
                   },
                 ],
               },
-              { serviceId: 2 },
-              { serviceId: 3 },
+              
             ],
             coordinates: {
               latitude: 27.196518,
@@ -508,7 +505,7 @@ const provinces = [
             id: 1,
             name: "اوز",
             value: "evaz",
-            services: [{ serviceId: 2 }, { serviceId: 3 }],
+            services: [ { serviceId: 1 }],
             coordinates: {
               latitude: 27.759911,
               longitude: 54.006494,
