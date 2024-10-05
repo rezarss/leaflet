@@ -41,11 +41,15 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
   const selectedCity = findById(selectedCounty?.cities, selectedField.cityId);
 
   const searchHandler = (e) => {
-    setCityQuerySearch(e.target.value)
-    if (cityQuerySearch.length == 1) {
-      setSearchResult([])
+
+    const query = e.target.value;
+    setCityQuerySearch(query);
+
+    if (query.length < 3) {
+      setSearchResult([]);
       return;
     }
+
     const searchResults = [];
     for (const province of provinces) {
       for (const county of province.counties) {
@@ -55,6 +59,7 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
               searchResults.push({
                 provinceId: province.id,
                 countyId: county.id,
+                provinceName: province.name,
                 countyName: county.name,
                 city
               })
@@ -104,13 +109,15 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
       </div>
 
       <div className='relative w-full sm:w-fit'>
-        <input type='text' value={cityQuerySearch} onInput={searchHandler} className='w-full sm:w-fit p-2 border border-gray-300 rounded-md bg-slate-50' placeholder='جستجوی شهر' />
+        <input type='text' value={cityQuerySearch} onChange={searchHandler} className='w-full sm:w-fit p-2 border border-gray-300 rounded-md bg-slate-50' placeholder='جستجوی شهر' />
         {searchResult.length > 0 && (
           <ul className='absolute top-12 w-full bg-slate-50 border border-gray-300 rounded-md z-20 p-2 pb-0'>
             {
               searchResult && searchResult.map((city, index) => {
                 return (
-                  <li key={index} className='mb-3 hover:text-blue-500 hover:cursor-pointer' onClick={itemSearchClick} data-city={JSON.stringify(city)}>{city.city.name}</li>
+                  <li key={index} className='bg-slate-100 hover:bg-slate-200 rounded-md py-3 px-2 mb-3 hover:text-blue-500 hover:cursor-pointer' onClick={itemSearchClick} data-city={JSON.stringify(city)}>
+                    {city.city.name}<span className='text-xs opacity-50'>, {city.countyName}, {city.provinceName}</span>
+                  </li>
                 )
               })
             }

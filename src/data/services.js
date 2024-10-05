@@ -4,7 +4,7 @@ const services = [
     name: "وایرلس",
     value: "wireless",
     icon: "/icons/antenna.webp",
-  }
+  },
   // {
   //   id: 2,
   //   name: "ADSL",
