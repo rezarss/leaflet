@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { provinces } from '../../data/provinces';
 import { services } from '../../data/services';
 import { IoClose } from "react-icons/io5";
 
 const ServicesFields = ({ selectedField, setSelectedField }) => {
 
+  const inputSearchQueryRef = useRef()
   const [searchResult, setSearchResult] = useState([])
   const [cityQuerySearch, setCityQuerySearch] = useState('')
 
@@ -81,6 +82,12 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
     setCityQuerySearch('')
   }
 
+  const cleanSearchQuery = () => {
+    setSearchResult([])
+    setCityQuerySearch('')
+    inputSearchQueryRef.current.focus()
+  }
+
   return (
     <div className='flex justify-center sm:justify-between items-center flex-wrap sm:flex-nowrap'>
       <div className='flex justify-center sm:justify-start items-center flex-wrap gap-2 w-full sm:w-fit mb-4 sm:mb-0'>
@@ -111,8 +118,8 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
 
       <div className='relative w-full sm:w-fit'>
         <div className='relative'>
-          <input type='text' value={cityQuerySearch} onChange={searchHandler} className='w-full sm:w-fit p-2 border border-gray-300 rounded-md bg-slate-50' placeholder='جستجوی شهر' />
-          <span onClick={() => setCityQuerySearch('')} className='absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer text-md'><IoClose /></span>
+          <input type='text' value={cityQuerySearch} ref={inputSearchQueryRef} onChange={searchHandler} className='w-full sm:w-fit p-2 border border-gray-300 rounded-md bg-slate-50' placeholder='جستجوی شهر' />
+          {cityQuerySearch.length > 0 && <span onClick={cleanSearchQuery} className='absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer text-md'><IoClose /></span>}
         </div>
         {searchResult.length > 0 && (
           <ul className='absolute top-12 w-full bg-slate-50 border border-gray-300 rounded-md z-20 p-2 pb-0 max-h-[calc(100vh-126px)] sm:max-h-[calc(100vh-100px)] overflow-y-auto'>
