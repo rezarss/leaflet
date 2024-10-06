@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { provinces } from '../../data/provinces';
 import { services } from '../../data/services';
+import { IoClose } from "react-icons/io5";
 
 const ServicesFields = ({ selectedField, setSelectedField }) => {
 
@@ -109,9 +110,12 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
       </div>
 
       <div className='relative w-full sm:w-fit'>
-        <input type='text' value={cityQuerySearch} onChange={searchHandler} className='w-full sm:w-fit p-2 border border-gray-300 rounded-md bg-slate-50' placeholder='جستجوی شهر' />
+        <div className='relative'>
+          <input type='text' value={cityQuerySearch} onChange={searchHandler} className='w-full sm:w-fit p-2 border border-gray-300 rounded-md bg-slate-50' placeholder='جستجوی شهر' />
+          <span onClick={() => setCityQuerySearch('')} className='absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer text-md'><IoClose /></span>
+        </div>
         {searchResult.length > 0 && (
-          <ul className='absolute top-12 w-full bg-slate-50 border border-gray-300 rounded-md z-20 p-2 pb-0'>
+          <ul className='absolute top-12 w-full bg-slate-50 border border-gray-300 rounded-md z-20 p-2 pb-0 max-h-[calc(100vh-126px)] sm:max-h-[calc(100vh-100px)] overflow-y-auto'>
             {
               searchResult && searchResult.map((city, index) => {
                 return (
