@@ -26,6 +26,6 @@ button {
 
 @media only screen and (max-width: 640px) {
   .leaflet-container {
-    height: calc(100vh - 216px);
+    height: calc(100vh - 400px);
   }
 }
