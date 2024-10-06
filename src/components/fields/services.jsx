@@ -122,7 +122,7 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
           {cityQuerySearch.length > 0 && <span onClick={cleanSearchQuery} className='absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer text-md'><IoClose /></span>}
         </div>
         {searchResult.length > 0 && (
-          <ul className='absolute top-12 w-full bg-slate-50 border border-gray-300 rounded-md z-20 p-2 pb-0 max-h-[calc(100vh-126px)] sm:max-h-[calc(100vh-100px)] overflow-y-auto'>
+          <ul className='absolute top-12 w-full bg-slate-50 border border-gray-300 rounded-md z-20 p-2 pb-0 max-h-[calc(100vh-270px)] sm:max-h-[calc(100vh-100px)] overflow-y-auto'>
             {
               searchResult && searchResult.map((city, index) => {
                 return (
