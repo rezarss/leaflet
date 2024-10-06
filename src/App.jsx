@@ -164,7 +164,6 @@ function App() {
                 <h3 className="text-right font-bold">مختصات:</h3>
                 <p className="text-right !my-0">عرض جغرافیایی: {clickedPosition.lat.toFixed(6)}</p>
                 <p className="text-right !my-0"><span className="!font-bold">طول جغرافیایی:</span> {clickedPosition.lng.toFixed(6)}</p>
-
               </div>
             </Popup>
           )}
