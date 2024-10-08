@@ -126,7 +126,7 @@ const ServicesFields = ({ selectedField, setSelectedField }) => {
             {
               searchResult && searchResult.map((city, index) => {
                 return (
-                  <li key={index} className='bg-slate-100 hover:bg-slate-200 rounded-md py-3 px-2 mb-3 hover:text-blue-500 hover:cursor-pointer' onClick={itemSearchClick} data-city={JSON.stringify(city)}>
+                  <li key={index} className='bg-slate-100 hover:bg-slate-200 rounded-md py-3 px-2 mb-3 hover:text-blue-500 hover:cursor-pointer dark:text-black' onClick={itemSearchClick} data-city={JSON.stringify(city)}>
                     {city.city.name}<span className='text-xs opacity-50'>, {city.countyName}, {city.provinceName}</span>
                   </li>
                 )
