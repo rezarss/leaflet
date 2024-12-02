@@ -56,8 +56,8 @@ button:focus-visible {
 }
 
 /* New styles for input and select elements */
-input,
-select {
+input:not(input[type=file]),
+select, textarea {
   color: #213547;
   background-color: #f9f9f9;
 }

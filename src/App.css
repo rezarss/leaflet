@@ -1,12 +1,16 @@
 @font-face {
-  font-family: iranyekan;
+  font-family: bonyadekoodak;
   font-style: normal;
   font-weight: 400;
-  src: url("./assets/fonts/iranyekan/IRANYekanWebRegular.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("./assets/fonts/iranyekan/IRANYekanWebRegular.woff2") format("woff2"); /* FF39+,Chrome36+, Opera24+*/
+  src: url("./assets/fonts/BonyadeKoodak/BonyadeKoodak-Light.woff") format("woff");
 }
+
+.bonyad,
 select,
 input,
+textarea,
 p,
+a,
 span,
 h1,
 h2,
@@ -15,13 +19,30 @@ h4,
 h5,
 h6,
 li,
-button {
-  font-family: iranyekan !important;
+button,
+label,
+[class^="go"] {
+  font-family: bonyadekoodak !important;
 }
+
+input[dir=ltr]::placeholder {
+  text-align: right;
+  direction: rtl;
+}
+
+.container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .leaflet-container {
   width: 100%;
   height: calc(100vh - 126px);
   border-radius: 10px;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 640px) {
