@@ -381,7 +381,7 @@ const ServiceRegistrationForm = ({ selectedService, locationInfo }) => {
             // اضافه کردن داده‌های کاربر
             sendFormData.append('userData', JSON.stringify(userData));
 
-            const response = await axios.post('http://localhost:3000/api/coverage/installreq', sendFormData, {
+            const response = await axios.post(`${import.meta.env.VITE_CRM_DOMAIN}api/coverage/installreq`, sendFormData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }

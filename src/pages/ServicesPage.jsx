@@ -48,10 +48,10 @@ const ServicesPage = () => {
             setLoading(true);
 
             // چاپ IP و پورت دقیق
-            console.log('Attempting to fetch from:', 'http://192.168.50.9:3000/api/service/regservices');
+            console.log('Attempting to fetch from:', `${import.meta.env.VITE_CRM_DOMAIN}api/service/regservices`);
 
             // تنظیمات Axios با تایم‌اوت بیشتر
-            const response = await axios.get('http://192.168.50.9:3000/api/service/regservices', {
+            const response = await axios.get(`${import.meta.env.VITE_CRM_DOMAIN}api/service/regservices`, {
                 //timeout: 10000, // 10 ثانیه
                 headers: {
                     'Content-Type': 'application/json',

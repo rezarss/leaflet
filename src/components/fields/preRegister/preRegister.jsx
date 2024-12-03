@@ -66,7 +66,7 @@ const ServicePreRegistrationForm = ({ clickedPosition, nearestPoint }) => {
                 }
             };
 
-            const { data } = await axios.post('http://localhost:3000/api/expansionarea', payload);
+            const { data } = await axios.post(`${import.meta.env.VITE_CRM_DOMAIN}api/expansionarea`, payload);
             console.log("data", data)
 
             toast.dismiss(loadingToast);
