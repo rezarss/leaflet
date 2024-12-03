@@ -146,6 +146,8 @@ const ServicePreRegistrationForm = ({ clickedPosition, nearestPoint }) => {
                     />
                 </div>
 
+                <p>ddddddddd:{import.meta.env.VITE_CRM_DOMAIN}</p>
+
                 <div className="flex justify-between pt-4">
                     <button
                         type="button"
